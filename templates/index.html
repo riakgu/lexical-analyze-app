@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lexical Analyzer and Parser</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Lexical Analyzer and Parser</h1>
+            <h3>Kelompok 5</h3>
+            <h4>Rizky Akbar G - 1301213372</h4>
+            <h4>Helmi Dermawan - 1301210570</h4>
+            <h4>Bayu Seno N - 1301213270</h4>
+
+            <form method="POST" action="/">
+                <label for="code">Masukan code:</label><br>
+                <textarea id="code" name="code" required></textarea><br><br>
+                <input type="submit" value="Submit">
+            </form>
+
+            {% if token_codes %}
+                <div class="result">
+                    <h4>Hasil Lexical Analyzer:</h4>
+                    <ul>
+                        {% for code in token_codes %}
+                            <li>{{ code }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+
+            {% if result %}
+                <div class="result">
+                    <h4>Hasil Parser:</h4>
+                    <p>{{ result }}</p>
+                </div>
+            {% endif %}
+        </div>
+    </body>
+</html>
